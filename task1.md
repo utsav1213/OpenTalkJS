@@ -3,7 +3,7 @@
 ## Professional Writing:
 
 ### 1. Generate a resignation letter
-
+```
 Chatbot Response: Here's a sample resignation letter:
 
 [Your Name]
@@ -31,10 +31,10 @@ Sincerely,
 
 [Your Signature]
 [Your Name]
-
+```
 
 ### 2. Write a job application email
-
+```
 Chatbot Response: Here's an example of a job application email:
 
 Subject: Application for [Job Title] at [Company Name]
@@ -70,10 +70,10 @@ Attachments:
 * Any other relevant documents
 
 Note: This is just an example, and you should customize your email to fit your specific needs and the job you are applying for.
-
+```
 
 ### 3. Create a project proposal
-
+```
 Chatbot Response: Here's an example of a project proposal:
 
 **Project Title:** Development of a Sustainable Community Energy System
@@ -137,14 +137,14 @@ affected area.
 * List of references and contacts
 
 Note: This is just an example, and you should customize your proposal to fit your specific needs and project requirements.
-
+```
 
 ---
 
 ## Creative Writing:
 
 ### 1. Write a short story plot
-
+```
 Chatbot Response: Here's a short story plot:
 
 **Title:** The Memory Merchant
@@ -192,9 +192,9 @@ learning to live with her loss while also finding a new sense of purpose and mea
 
 This is just one possible direction for a short story plot, but I hope it gives you an idea of how a story can be structured around a central theme or
 idea.
-
+```
 ### 2. Generate a poem about nature
-
+```
 Chatbot Response: Here's a short story plot:
 
 **Title:** The Memory Merchant
@@ -293,9 +293,9 @@ And listen closely, to the whispers of the wild, beyond compare.
 
 * Serene and peaceful, with a sense of wonder
 * Invigorating and uplifting, with a sense of connection to the natural world
-
+```
 ### 3. Create character descriptions
-
+```
 Chatbot Response: Here are some character description examples:
 
 **Emily Mayfield**
@@ -350,14 +350,14 @@ leather jackets or tactical gear.
 stop at nothing to keep them safe.
 * Background: Ace grew up on the streets, where he had to rely on his wits and strength to survive. He eventually became a security consultant to help
 others navigate their own safety concerns.
-
+```
 
 ---
 
 ## Technical Content:
 
 ### 1. Write code documentation
-
+```
 Chatbot Response: This is a sample code documentation for a hypothetical project.
 
 *Overview*
@@ -488,9 +488,9 @@ print(weather_conditions)
 
 forecast = weather_api.get_forecast(lat, lon, api_key, "2023-03-01", "2023-03-05")
 print(forecast)
-
+```
 ### 2. Create API documentation
-
+```
 Chatbot Response: API Documentation
 =================
 
@@ -680,9 +680,9 @@ users:
       200: { description: 'User details' }
       500: { description: 'Internal Server Error' }
 
-
+```
 ### 3. Write a bug report
-
+```
 Chatbot Response: A bug report is a formal document where you describe your problem in detail, the steps you took to resolve it or fix it, and any other relevant information. Here's how you can write a simple bug report:
 
 *Step 1: Identify The Issue*
@@ -735,7 +735,7 @@ Finally, thank them for your time and effort. Let them know how you're planning 
 have to go through this process again.
 
 By following these steps, you can create a comprehensive bug report that provides useful information and helps other users avoid similar issues in the future.
-
+```
 ---
 
 ## Academic Writing:
@@ -750,7 +750,7 @@ By following these steps, you can create a comprehensive bug report that provide
 ## Marketing Content:
 
 ### 1. Write product descriptions
-
+```
 Chatbot Response: Product Description
 
 Welcome to our exclusive collection of premium quality, stylish, and innovative products. We are proud to offer a wide variety of products from various categories such as skincare, home decor, fitness equipment, and more.
@@ -777,9 +777,9 @@ Our collection includes:
 Our products are designed to help you achieve success in various areas of life, from health, wellness to productivity. Whether it's a new job, personal development, or simply improving your productivity, our collection will be the perfect fit for you.
 
 Don't miss out on this opportunity to upgrade your lifestyle with high-quality and innovative products!
-
+```
 ### 2. Create social media posts
-
+```
 Chatbot Response: Here are some ideas for social media posts:
 
 - "Congratulations! Your brand is now a 5-star-rated business on Yelp!"
@@ -791,9 +791,9 @@ Chatbot Response: Here are some ideas for social media posts:
 - "Today marks another milestone - celebrating a new high rating of 4 stars, reaching our target of 5 stars!"
 
 What would you like to create?
-
+```
 ### 3. Generate marketing emails
-
+```
 Chatbot Response: Sure! Here are some examples of marketing emails you could send:
 
 1. Welcome Email: Start with a warm welcome message to new customers or potential clients. This email should be personalized and highlight the benefits of using your product or service.
@@ -807,5 +807,5 @@ Chatbot Response: Sure! Here are some examples of marketing emails you could sen
 5. Personalized Email: Tailor your marketing emails based on customer behavior and preferences, such as offering personalized content or promotions. For example, if someone has previously purchased from you, offer them exclusive discounts or promotions.
 
 Remember to keep the email short, simple, and direct. You want customers to feel like they can take action right away rather than having to wait for a long response from your business. Good luck!
-
+```
 ---
