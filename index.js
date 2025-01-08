@@ -18,23 +18,66 @@
 //  Stage:2
 //---------------------------------------------------------------------------------
 
-import ollama from "ollama";
-import fs from "fs";
+// import ollama from "ollama";
+// import fs from "fs";
 
-let q= fs.readFileSync("./q.txt", "utf-8");
-console.log(q)
+// let q= fs.readFileSync("./q.txt", "utf-8");
+// console.log(q)
 
-askQuestion()
-async function askQuestion() {
+// askQuestion()
+// async function askQuestion() {
+//   try {
+//     const response = await ollama.chat({
+//       model: "llama3.2:3b",
+//       messages: [{ role: 'user', content: q }]
+//     });
+
+//     fs.writeFileSync("./a.txt", response.message.content);
+
+//   } catch (error) {
+//     console.error("Error occurred:", error.message);
+//   }
+// }
+
+//-------------------------------------------------------------------------
+//                          Stage-C
+//-------------------------------------------------------------------------
+import fs from 'fs';
+import ollama from 'ollama';
+
+let folder = 'Questions';
+
+async function processQuestion(question) {
   try {
     const response = await ollama.chat({
       model: "llama3.2:3b",
-      messages: [{ role: 'user', content: q }]
+      messages: [{ role: 'user', content: question }]
     });
 
-    fs.writeFileSync("./a.txt", response.message.content);
-
+    return response.message.content;
   } catch (error) {
     console.error("Error occurred:", error.message);
   }
 }
+
+fs.readdir(folder, (err, files) => {
+  if (err) {
+    return console.error('Error reading directory:', err.message);
+  }
+
+  files.forEach((file) => {
+    const filepath = `${folder}/${file}`;
+    fs.readFile(filepath, 'utf8', async (err, question) => {
+      if (err) {
+        return console.error(`Error reading file ${file}:`, err.message);
+      }
+      
+      let ans_file = file;
+      const response = await processQuestion(question);
+      
+      fs.mkdirSync('Answers', { recursive: true });
+      let answer_path = `Answers/${ans_file.replace('Q', 'A')}`;
+      fs.appendFileSync(answer_path, response);
+    });
+  });
+});

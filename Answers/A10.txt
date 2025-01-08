@@ -1,0 +1,138 @@
+**API Documentation**
+
+**Overview**
+
+This API provides a set of endpoints for managing books, authors, and reviews. It is designed to be used with a web application that allows users to search, create, read, update, and delete (CRUD) resources.
+
+**Endpoints**
+
+### Books
+
+#### GET /books
+
+* Returns a list of all books in the system.
+* Response: JSON array of book objects
+* Example: `[ { "id": 1, "title": "Book Title", "author": "Author Name" }, { "id": 2, "title": "Another Book", "author": "Another Author" } ]`
+
+#### GET /books/{id}
+
+* Returns a single book by ID.
+* Response: JSON object of book
+* Example: ` { "id": 1, "title": "Book Title", "author": "Author Name" }`
+
+#### POST /books
+
+* Creates a new book in the system.
+* Request Body:
+	+ `title`: string (required)
+	+ `author`: string (required)
+* Response: JSON object of newly created book
+* Example: ` { "id": 1, "title": "New Book", "author": "New Author" }`
+
+#### PUT /books/{id}
+
+* Updates an existing book in the system.
+* Request Body:
+	+ `title`: string (optional)
+	+ `author`: string (optional)
+* Response: JSON object of updated book
+* Example: ` { "id": 1, "title": "Updated Book", "author": "Updated Author" }`
+
+#### DELETE /books/{id}
+
+* Deletes a book from the system.
+* Response: JSON object indicating success or failure
+* Example: `{ "success": true }` or `{ "error": "Book not found" }`
+
+### Authors
+
+#### GET /authors
+
+* Returns a list of all authors in the system.
+* Response: JSON array of author objects
+* Example: `[ { "id": 1, "name": "Author Name" }, { "id": 2, "name": "Another Author" } ]`
+
+#### GET /authors/{id}
+
+* Returns a single author by ID.
+* Response: JSON object of author
+* Example: ` { "id": 1, "name": "Author Name" }`
+
+#### POST /authors
+
+* Creates a new author in the system.
+* Request Body:
+	+ `name`: string (required)
+* Response: JSON object of newly created author
+* Example: ` { "id": 1, "name": "New Author" }`
+
+#### PUT /authors/{id}
+
+* Updates an existing author in the system.
+* Request Body:
+	+ `name`: string (optional)
+* Response: JSON object of updated author
+* Example: ` { "id": 1, "name": "Updated Author" }`
+
+#### DELETE /authors/{id}
+
+* Deletes an author from the system.
+* Response: JSON object indicating success or failure
+* Example: `{ "success": true }` or `{ "error": "Author not found" }`
+
+### Reviews
+
+#### GET /reviews
+
+* Returns a list of all reviews in the system.
+* Response: JSON array of review objects
+* Example: `[ { "id": 1, "bookId": 1, "rating": 5, "comment": "Review Comment" }, { "id": 2, "bookId": 2, "rating": 4, "comment": "Another Review Comment" } ]`
+
+#### GET /reviews/{id}
+
+* Returns a single review by ID.
+* Response: JSON object of review
+* Example: ` { "id": 1, "bookId": 1, "rating": 5, "comment": "Review Comment" }`
+
+#### POST /reviews
+
+* Creates a new review in the system.
+* Request Body:
+	+ `bookId`: integer (required)
+	+ `rating`: integer (required)
+	+ `comment`: string (optional)
+* Response: JSON object of newly created review
+* Example: ` { "id": 1, "bookId": 1, "rating": 5, "comment": "Review Comment" }`
+
+#### PUT /reviews/{id}
+
+* Updates an existing review in the system.
+* Request Body:
+	+ `bookId`: integer (optional)
+	+ `rating`: integer (optional)
+	+ `comment`: string (optional)
+* Response: JSON object of updated review
+* Example: ` { "id": 1, "bookId": 1, "rating": 5, "comment": "Updated Review Comment" }`
+
+#### DELETE /reviews/{id}
+
+* Deletes a review from the system.
+* Response: JSON object indicating success or failure
+* Example: `{ "success": true }` or `{ "error": "Review not found" }`
+
+**Error Handling**
+
+* 400 Bad Request: Invalid request body or malformed input
+* 401 Unauthorized: Authentication failed
+* 404 Not Found: Resource not found
+* 500 Internal Server Error: Server error
+
+**Security**
+
+* Authentication: Token-based authentication using JSON Web Tokens (JWT)
+* Authorization: Role-based access control with separate roles for administrators, users, and guests
+
+**Rate Limiting**
+
+* IP address rate limiting: 100 requests per hour per IP address
+* User role rate limiting: 500 requests per minute per user role
