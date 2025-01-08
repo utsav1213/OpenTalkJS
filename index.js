@@ -18,27 +18,31 @@
 //  Stage:2
 //---------------------------------------------------------------------------------
 
-// import ollama from "ollama";
-// import fs from "fs";
+import fs from "fs"
+import ollama from "ollama"
 
-// let q= fs.readFileSync("./q.txt", "utf-8");
-// console.log(q)
+async function Chat() {
+  try {
+    const inputFilePath = "q.txt"
+    const inputContent = fs.readFileSync(inputFilePath, "utf-8")
 
-// askQuestion()
-// async function askQuestion() {
-//   try {
-//     const response = await ollama.chat({
-//       model: "llama3.2:3b",
-//       messages: [{ role: 'user', content: q }]
-//     });
+    const response = await ollama.chat({
+      model: "llama3.2:3b",
+      messages: [{ role: "user", content: inputContent }]
+    })
 
-//     fs.writeFileSync("./a.txt", response.message.content);
+    const chatbotResponse = response.message.content
 
-//   } catch (error) {
-//     console.error("Error occurred:", error.message);
-//   }
-// }
+    const outputFilePath = "a.txt"
+    fs.writeFileSync(outputFilePath, chatbotResponse, "utf-8")
 
+    console.log("Chatbot response has been saved to output.txt.")
+  } catch (error) {
+    console.error("Error occurred:", error.message)
+  }
+}
+
+Chat()
 //-------------------------------------------------------------------------
 //                          Stage-C
 //-------------------------------------------------------------------------
